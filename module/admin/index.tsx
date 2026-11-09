@@ -6,6 +6,7 @@ import { useUser } from '../auth/context/useUser'
 import { logout } from '../auth/actions/session';
 import { useRouter } from 'next/navigation';
 import { createFunction } from './actions/functions';
+import { notify } from '../common/hook/useToast';
 
 export const AdminPage = () => {
     const { user, exit: _exit } = useUser()
@@ -46,10 +47,12 @@ export const AdminPage = () => {
             const result = await createFunction({ name, latex, description, wikipediaUrl })
             if (!result.success) {
                 setFormError(result.message)
+                notify(result.message, 'error')
                 return
             }
 
             setFormSuccess(`“${result.name}” se guardó como borrador.`)
+            notify(`“${result.name}” se guardó como borrador.`, 'success')
             setName('')
             setLatex('')
             setDescription('')
@@ -81,14 +84,14 @@ export const AdminPage = () => {
             <section className="grid gap-8 w-full max-w-5xl mx-auto lg:grid-cols-[minmax(0,1fr)_280px]">
                 <div>
                     <div className="mb-6">
-                        <p className="text-sm font-medium text-primary">Biblioteca matemática</p>
-                        <h2 className="mt-1 text-xl font-semibold">Crear una función</h2>
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Editorial matemática</p>
+                        <h2 className="mt-2 text-2xl font-semibold tracking-tight">Nueva entrada de la biblioteca</h2>
                         <p className="mt-2 max-w-2xl text-sm text-base-content/70">
                             Agrega la expresión y una descripción clara. La nueva entrada se guardará como borrador.
                         </p>
                     </div>
 
-                    <form onSubmit={submitFunction} className="space-y-5 rounded-lg border border-base-300 bg-base-200 p-5 sm:p-7">
+                    <form onSubmit={submitFunction} className="space-y-6 rounded-2xl border border-base-300 bg-base-200/70 p-5 shadow-xl shadow-black/10 sm:p-8">
                         <div className="form-control w-full">
                             <span className="div-text mb-2 font-medium">Nombre <span className="text-error">*</span></span>
                             <input
@@ -151,7 +154,7 @@ export const AdminPage = () => {
                     </form>
                 </div>
 
-                <aside className="h-fit rounded-lg border border-base-300 bg-base-200 p-5">
+                <aside className="h-fit rounded-2xl border border-primary/15 bg-primary/5 p-6">
                     <h3 className="font-semibold">Antes de guardar</h3>
                     <ul className="mt-4 space-y-3 text-sm text-base-content/70">
                         <li>Usa un nombre único y fácil de encontrar.</li>
