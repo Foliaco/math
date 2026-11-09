@@ -4,11 +4,11 @@ import { MainContent } from '../module/home/components/content'
 
 export default function Home() {
   return (
-    <div className="h-screen flex flex-col">
-      <div className="h-[10%] max-h-17.5">
+    <div className="min-h-screen flex flex-col">
+      <div className="shrink-0">
         <Header />
       </div>
-      <div className="h-[95%] max-h-[calc(100vh-17.5rem)] w-full flex justify-center items-center">
+      <div className="flex min-h-0 w-full flex-1 justify-center">
         <MainContent />
       </div>
     </div>

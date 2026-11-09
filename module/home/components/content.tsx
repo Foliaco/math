@@ -76,7 +76,7 @@ export const MainContent = () => {
 
 
     return (
-        <main className="w-full max-w-6xl px-5 pb-16 pt-8 sm:px-8 lg:pt-14">
+        <main className="w-full max-w-6xl px-5 pb-16 pt-16 sm:px-8 sm:pt-20 lg:pt-24">
             <section className="mx-auto max-w-3xl text-center">
                 <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                     <span className="h-1.5 w-1.5 rounded-full bg-primary" /> Biblioteca matemática
