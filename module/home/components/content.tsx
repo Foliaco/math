@@ -1,7 +1,7 @@
 
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Markdown from 'react-markdown'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
@@ -34,19 +34,20 @@ export const MainContent = () => {
     const [value, setValue] = useState('')
     const [result, setResult] = useState<SearchFunctionResult>([])
     const [valueRandom, setValueRandom] = useState(getRandomQuestion())
+    const randomQuestionRef = useRef(valueRandom)
     const [loadingSearch, setLoadingSearch] = useState(false);
 
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setValueRandom(getRandomQuestion())
+            const nextQuestion = getRandomQuestion()
+            randomQuestionRef.current = nextQuestion
+            setValueRandom(nextQuestion)
         }, 5000)
 
-
         const handleKeyDown = (event: KeyboardEvent) => {
-            console.log(event)
             if (event.shiftKey && event.key === 'Tab') {
-                setValue(valueRandom)
+                setValue(randomQuestionRef.current)
                 clearInterval(interval)
             }
         }
@@ -83,7 +84,7 @@ export const MainContent = () => {
                 </div>
                 <h2 className="text-3xl font-semibold tracking-tight text-base-content sm:text-5xl">
                     {user ? `Hola ${user.email?.split('@')[0]}.` : 'Explora las matemáticas.'}
-                    <span className="block text-base-content/60">Una búsqueda, una definición clara.</span>
+                    <span className="block text-base-content/60"><Typewriter text="Una búsqueda, una definición clara." speed={42} delay={180} /></span>
                 </h2>
                 <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-base-content/60 sm:text-base">
                     Consulta funciones, identidades y ecuaciones con expresiones legibles y explicaciones pensadas para estudiar.
