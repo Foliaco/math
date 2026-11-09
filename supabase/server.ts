@@ -4,8 +4,8 @@ import { Database } from './database.types';
 import { cookies } from 'next/headers';
 
 
-const URL = process.env.SUPABASE_PROJECT_URL!;
-const KEY = process.env.SUPABASE_API_KEY!;
+const URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 
 
