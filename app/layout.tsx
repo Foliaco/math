@@ -22,10 +22,10 @@ export default async function RootLayout({
   const user = await client.auth.getUser()
 
   return (
-    <html lang="en">
+    <html data-theme="syntactic-canvas" lang="es">
       <body
         className="bg-base-100"
-        data-theme="lofi"
+        
       >
         <LayoutClient
           user={user.data.user}

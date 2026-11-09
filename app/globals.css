@@ -2,38 +2,165 @@
 @plugin "daisyui";
 
 @plugin "daisyui/theme" {
-  name: "lofi";
+  name: "syntactic-canvas";
   default: true;
-  prefersdark: false;
-  color-scheme: "light";
-  --color-base-100: oklch(100% 0 0);
-  --color-base-200: oklch(97% 0 0);
-  --color-base-300: oklch(94% 0 0);
-  --color-base-content: oklch(0% 0 0);
-  --color-primary: oklch(15.906% 0 0);
-  --color-primary-content: oklch(100% 0 0);
-  --color-secondary: oklch(21.455% 0.001 17.278);
-  --color-secondary-content: oklch(100% 0 0);
-  --color-accent: oklch(26.861% 0 0);
-  --color-accent-content: oklch(100% 0 0);
-  --color-neutral: oklch(0% 0 0);
-  --color-neutral-content: oklch(100% 0 0);
-  --color-info: oklch(79.54% 0.103 205.9);
-  --color-info-content: oklch(15.908% 0.02 205.9);
-  --color-success: oklch(90.13% 0.153 164.14);
-  --color-success-content: oklch(18.026% 0.03 164.14);
-  --color-warning: oklch(88.37% 0.135 79.94);
-  --color-warning-content: oklch(17.674% 0.027 79.94);
-  --color-error: oklch(78.66% 0.15 28.47);
-  --color-error-content: oklch(15.732% 0.03 28.47);
-  --radius-selector: 0.25rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.25rem;
+  prefersdark: true;
+  color-scheme: "dark";
+  --color-base-100: #111318;
+  --color-base-200: #1a1b21;
+  --color-base-300: #1e1f25;
+  --color-base-content: #e2e2e9;
+  --color-primary: #00F2FE;
+  --color-primary-content: #000000;
+  --color-secondary: #4edea3;
+  --color-secondary-content: #003824;
+  --color-accent: #fcf5ff;
+  --color-accent-content: #381385;
+  --color-neutral: #33353a;
+  --color-neutral-content: #e2e2e9;
+  --color-info: #00f2fe;
+  --color-info-content: #006a70;
+  --color-success: #4edea3;
+  --color-success-content: #003824;
+  --color-warning: #e1d5ff;
+  --color-warning-content: #684cb7;
+  --color-error: #ffb4ab;
+  --color-error-content: #690005;
+  --color-surface: #111318;
+  --color-surface-dim: #111318;
+  --color-surface-bright: #37393f;
+  --color-surface-container-lowest: #0c0e13;
+  --color-surface-container-low: #1a1b21;
+  --color-surface-container: #1e1f25;
+  --color-surface-container-high: #282a2f;
+  --color-surface-container-highest: #33353a;
+  --color-on-surface: #e2e2e9;
+  --color-on-surface-variant: #b9cacb;
+  --color-inverse-surface: #e2e2e9;
+  --color-inverse-on-surface: #2e3036;
+  --color-outline: #849495;
+  --color-outline-variant: #3a494b;
+  --color-surface-tint: #00dce6;
+  --color-on-primary: #00373a;
+  --color-primary-container: #00f2fe;
+  --color-on-primary-container: #006a70;
+  --color-inverse-primary: #00696f;
+  --color-on-secondary: #003824;
+  --color-secondary-container: #00a572;
+  --color-on-secondary-container: #00311f;
+  --color-tertiary: #fcf5ff;
+  --color-on-tertiary: #381385;
+  --color-tertiary-container: #e1d5ff;
+  --color-on-tertiary-container: #684cb7;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  --color-primary-fixed: #6ff6ff;
+  --color-primary-fixed-dim: #00dce6;
+  --color-on-primary-fixed: #002022;
+  --color-on-primary-fixed-variant: #004f53;
+  --color-secondary-fixed: #6ffbbe;
+  --color-secondary-fixed-dim: #4edea3;
+  --color-on-secondary-fixed: #002113;
+  --color-on-secondary-fixed-variant: #005236;
+  --color-tertiary-fixed: #e8ddff;
+  --color-tertiary-fixed-dim: #cebdff;
+  --color-on-tertiary-fixed: #21005e;
+  --color-on-tertiary-fixed-variant: #4f319c;
+  --color-background: #111318;
+  --color-on-background: #e2e2e9;
+  --color-surface-variant: #33353a;
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
   --size-selector: 0.25rem;
   --size-field: 0.25rem;
   --border: 1px;
-  --depth: 1;
+  --depth: 0;
   --noise: 0;
+}
+
+@theme static {
+  --color-surface: #111318;
+  --color-surface-dim: #111318;
+  --color-surface-bright: #37393f;
+  --color-surface-container-lowest: #0c0e13;
+  --color-surface-container-low: #1a1b21;
+  --color-surface-container: #1e1f25;
+  --color-surface-container-high: #282a2f;
+  --color-surface-container-highest: #33353a;
+  --color-on-surface: #e2e2e9;
+  --color-on-surface-variant: #b9cacb;
+  --color-inverse-surface: #e2e2e9;
+  --color-inverse-on-surface: #2e3036;
+  --color-outline: #849495;
+  --color-outline-variant: #3a494b;
+  --color-surface-tint: #00dce6;
+  --color-on-primary: #00373a;
+  --color-primary-container: #00f2fe;
+  --color-on-primary-container: #006a70;
+  --color-inverse-primary: #00696f;
+  --color-on-secondary: #003824;
+  --color-secondary-container: #00a572;
+  --color-on-secondary-container: #00311f;
+  --color-tertiary: #fcf5ff;
+  --color-on-tertiary: #381385;
+  --color-tertiary-container: #e1d5ff;
+  --color-on-tertiary-container: #684cb7;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  --color-primary-fixed: #6ff6ff;
+  --color-primary-fixed-dim: #00dce6;
+  --color-on-primary-fixed: #002022;
+  --color-on-primary-fixed-variant: #004f53;
+  --color-secondary-fixed: #6ffbbe;
+  --color-secondary-fixed-dim: #4edea3;
+  --color-on-secondary-fixed: #002113;
+  --color-on-secondary-fixed-variant: #005236;
+  --color-tertiary-fixed: #e8ddff;
+  --color-tertiary-fixed-dim: #cebdff;
+  --color-on-tertiary-fixed: #21005e;
+  --color-on-tertiary-fixed-variant: #4f319c;
+  --color-background: #111318;
+  --color-on-background: #e2e2e9;
+  --color-surface-variant: #33353a;
+
+  --color-primary-50: color-mix(in oklab, #e0fdff 100%, #00373a);
+  --color-primary-100: color-mix(in oklab, #e0fdff 95%, #00373a);
+  --color-primary-200: color-mix(in oklab, #e0fdff 88%, #00373a);
+  --color-primary-300: color-mix(in oklab, #e0fdff 80%, #00373a);
+  --color-primary-400: color-mix(in oklab, #e0fdff 70%, #00373a);
+  --color-primary-500: color-mix(in oklab, #e0fdff 60%, #00373a);
+  --color-primary-600: color-mix(in oklab, #e0fdff 50%, #00373a);
+  --color-primary-700: color-mix(in oklab, #e0fdff 38%, #00373a);
+  --color-primary-800: color-mix(in oklab, #e0fdff 26%, #00373a);
+  --color-primary-900: color-mix(in oklab, #e0fdff 14%, #00373a);
+  --color-primary-950: color-mix(in oklab, #e0fdff 7%, #00373a);
+
+  --color-secondary-50: color-mix(in oklab, #4edea3 100%, #003824);
+  --color-secondary-100: color-mix(in oklab, #4edea3 95%, #003824);
+  --color-secondary-200: color-mix(in oklab, #4edea3 88%, #003824);
+  --color-secondary-300: color-mix(in oklab, #4edea3 80%, #003824);
+  --color-secondary-400: color-mix(in oklab, #4edea3 70%, #003824);
+  --color-secondary-500: color-mix(in oklab, #4edea3 60%, #003824);
+  --color-secondary-600: color-mix(in oklab, #4edea3 50%, #003824);
+  --color-secondary-700: color-mix(in oklab, #4edea3 38%, #003824);
+  --color-secondary-800: color-mix(in oklab, #4edea3 26%, #003824);
+  --color-secondary-900: color-mix(in oklab, #4edea3 14%, #003824);
+  --color-secondary-950: color-mix(in oklab, #4edea3 7%, #003824);
+
+  --color-tertiary-50: color-mix(in oklab, #fcf5ff 100%, #381385);
+  --color-tertiary-100: color-mix(in oklab, #fcf5ff 95%, #381385);
+  --color-tertiary-200: color-mix(in oklab, #fcf5ff 88%, #381385);
+  --color-tertiary-300: color-mix(in oklab, #fcf5ff 80%, #381385);
+  --color-tertiary-400: color-mix(in oklab, #fcf5ff 70%, #381385);
+  --color-tertiary-500: color-mix(in oklab, #fcf5ff 60%, #381385);
+  --color-tertiary-600: color-mix(in oklab, #fcf5ff 50%, #381385);
+  --color-tertiary-700: color-mix(in oklab, #fcf5ff 38%, #381385);
+  --color-tertiary-800: color-mix(in oklab, #fcf5ff 26%, #381385);
+  --color-tertiary-900: color-mix(in oklab, #fcf5ff 14%, #381385);
+  --color-tertiary-950: color-mix(in oklab, #fcf5ff 7%, #381385);
 }
 
 body {
@@ -45,3 +172,95 @@ input,
 textarea {
   outline: none;
 }
+
+
+/* Fórmulas matemáticas */
+.formula-markdown {
+    @apply text-base-content text-center text-lg leading-relaxed;
+}
+
+.formula-markdown .katex-display {
+    @apply my-2 overflow-x-auto overflow-y-hidden;
+}
+
+.formula-markdown .katex {
+    @apply text-primary;
+}
+
+/* Markdown general */
+.small-markdown {
+    @apply text-sm leading-7 text-base-content/80;
+}
+
+.small-markdown h1,
+.small-markdown h2,
+.small-markdown h3 {
+    @apply font-bold text-base-content mt-4 mb-2;
+}
+
+.small-markdown h1 {
+    @apply text-xl;
+}
+
+.small-markdown h2 {
+    @apply text-lg;
+}
+
+.small-markdown h3 {
+    @apply text-base;
+}
+
+.small-markdown p {
+    @apply mb-3 last:mb-0;
+}
+
+.small-markdown ul {
+    @apply list-disc pl-5 mb-3 space-y-1;
+}
+
+.small-markdown ol {
+    @apply list-decimal pl-5 mb-3 space-y-1;
+}
+
+.small-markdown li {
+    @apply pl-1;
+}
+
+.small-markdown strong {
+    @apply font-bold text-base-content;
+}
+
+.small-markdown blockquote {
+    @apply border-l-4 border-primary/50 pl-4 py-1 my-3 text-base-content/70;
+}
+
+.small-markdown code {
+    @apply bg-base-300 px-1.5 py-0.5 rounded text-primary text-xs;
+}
+
+.small-markdown pre {
+    @apply bg-base-200 p-3 rounded-lg overflow-x-auto my-3;
+}
+
+.small-markdown a {
+    @apply text-primary underline underline-offset-2;
+}
+
+.small-markdown hr {
+    @apply border-base-300 my-4;
+}
+
+/* Tablas */
+.small-markdown table {
+    @apply w-full border-collapse text-sm my-3;
+}
+
+.small-markdown th {
+    @apply bg-base-200 font-bold text-left p-2 border border-base-300;
+}
+
+.small-markdown td {
+    @apply p-2 border border-base-300;
+}
+
+

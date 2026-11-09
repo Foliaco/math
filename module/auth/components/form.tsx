@@ -8,6 +8,7 @@ import { useToast } from "@/module/common/hook/useToast";
 import clsx from "clsx";
 import { useUser } from "../context/useUser";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 
 type FormLoginProps = {
@@ -124,6 +125,12 @@ export const FormLogin = ({ redirectTo }: FormLoginProps) => {
                             "Login"
                     }
                 </button>
+            </div>
+
+            <div className="w-full flex justify-center mt-5">
+                <p className="text-sm">
+                    Don't have an account? <Link href="/auth/signup" className="text-primary">Register</Link>
+                </p>
             </div>
         </div>
     )
