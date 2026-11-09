@@ -5,7 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
-  daisyui@5.7.50: 8851ce09c60cb0780695718414c9ad6893041ce0dbd45702af5b9984cdbdb254
+  daisyui@5.7.50:
+    hash: 8851ce09c60cb0780695718414c9ad6893041ce0dbd45702af5b9984cdbdb254
+    path: patches/daisyui@5.7.50.patch
 
 importers:
 
