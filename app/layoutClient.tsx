@@ -3,6 +3,7 @@
 import { useUser } from "@/module/auth/context/useUser";
 import { User } from "@supabase/supabase-js";
 import { useEffect } from "react";
+import { Toast } from "@/module/common/components/toast";
 
 
 type LayoutClientProps = {
@@ -20,5 +21,8 @@ export const LayoutClient = ({ children, user }: LayoutClientProps) => {
     }, [user, updateUser])
 
 
-    return children
+    return <>
+        {children}
+        <Toast />
+    </>
 }

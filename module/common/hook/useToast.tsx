@@ -30,3 +30,7 @@ export const useToast = create<IToastContext>(set => ({
         }, time + 1000)
     }
 }))
+
+export const notify = (msg: string, status: IToastContext['status'] = 'info', time = 5000) => {
+    useToast.getState().openToast(msg, status, time)
+}
