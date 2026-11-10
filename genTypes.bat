@@ -1,1 +1,1 @@
-npx supabase gen types typescript  --schema public > "supabase/database.types.ts"
+npx supabase gen types typescript --remote  --schema public > "supabase/database.types.ts" 

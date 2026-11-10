@@ -7,6 +7,9 @@ export type CreateFunctionInput = {
     latex: string
     description: string
     wikipediaUrl: string
+    slugEs: string
+    slugEn: string
+    slugJa: string
 }
 
 export type CreateFunctionResult =
@@ -18,9 +21,17 @@ export async function createFunction(input: CreateFunctionInput): Promise<Create
     const latex = input.latex.trim()
     const description = input.description.trim()
     const wikipediaUrl = input.wikipediaUrl.trim()
+    const slugEs = input.slugEs.trim()
+    const slugEn = input.slugEn.trim()
+    const slugJa = input.slugJa.trim()
 
     if (!name || !latex || !description) {
         return { success: false, message: 'Completa el nombre, la expresión y la descripción.' }
+    }
+
+    const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
+    if (![slugEs, slugEn, slugJa].every((slug) => slugPattern.test(slug))) {
+        return { success: false, message: 'Cada slug debe usar minúsculas, números y guiones.' }
     }
 
     if (wikipediaUrl) {
@@ -48,6 +59,9 @@ export async function createFunction(input: CreateFunctionInput): Promise<Create
         name,
         latex,
         description,
+        slug_es: slugEs,
+        slug_en: slugEn,
+        slug_ja: slugJa,
         wikipedia_url: wikipediaUrl || null,
         created_by: user.id,
     })
@@ -56,7 +70,7 @@ export async function createFunction(input: CreateFunctionInput): Promise<Create
         if (error.code === '23505') {
             return {
                 success: false,
-                message: 'Ya existe una función con ese nombre o esa expresión.',
+                message: 'Ya existe una función con ese nombre, expresión o slug.',
             }
         }
 

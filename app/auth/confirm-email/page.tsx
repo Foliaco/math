@@ -1,7 +1,12 @@
+import type { Metadata } from "next"
 import { SearchParams } from "next/dist/server/request/search-params"
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
+export const metadata: Metadata = {
+    title: "Confirmar correo",
+    robots: { index: false, follow: false },
+}
 
 type Props = {
     searchParams: Promise<SearchParams>

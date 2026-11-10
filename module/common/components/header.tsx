@@ -3,6 +3,7 @@ import { useUser } from '@/module/auth/context/useUser';
 import Link from 'next/link'
 import { LuMessagesSquare } from 'react-icons/lu';
 import { MdFunctions } from 'react-icons/md';
+import { ButtonLang } from './../../lang/button';
 
 /**
     * @description Header para el inicio de la aplicacion. Solo muestra el nombre de la app y un boton de unirse al foro.
@@ -26,9 +27,12 @@ export const Header = () => {
             </div>
 
 
-            <div className="tooltip tooltip-left" data-tip="Unirse al foro">
-                <Link href={user ? '/forum' : 'auth/login'} className="btn btn-primary btn-circle shadow-lg shadow-primary/30"><LuMessagesSquare size={20} /></Link>
+            <div className="tooltip tooltip-left" data-tip="Cambiar idioma">
+                <ButtonLang />
             </div>
+            {/* <div className="tooltip tooltip-left" data-tip="Unirse al foro">
+                <Link href={user ? '/forum' : 'auth/login'} className="btn btn-primary btn-circle shadow-lg shadow-primary/30"><LuMessagesSquare size={20} /></Link>
+            </div> */}
 
         </div>
     )

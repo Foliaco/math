@@ -1,6 +1,12 @@
+import type { Metadata } from "next"
 import { FormRegister } from "@/module/auth/components/form"
 import { createClient } from "@/supabase/server"
 import { redirect } from "next/navigation"
+
+export const metadata: Metadata = {
+    title: "Crear cuenta",
+    robots: { index: false, follow: false },
+}
 
 const SignUpPage = async () => {
 

@@ -1,6 +1,12 @@
+import type { Metadata } from "next"
 import { FormLogin } from "@/module/auth/components/form"
 import { createClient } from "@/supabase/server"
 import { redirect } from "next/navigation"
+
+export const metadata: Metadata = {
+    title: "Iniciar sesión",
+    robots: { index: false, follow: false },
+}
 
 const LoginPage = async () => {
 

@@ -1,4 +1,0 @@
-select *
-from net._http_response
-order by created desc
-limit 10;

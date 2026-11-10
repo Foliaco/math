@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS public.functions (
     description TEXT NOT NULL,
     embedding_enabled BOOLEAN NOT NULL DEFAULT TRUE,
     status_publish public.status_publish NOT NULL DEFAULT 'draft',
-    created_by UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+    created_by UUID REFERENCES auth.users(id) ON DELETE CASCADE, -- if null mean is created by system or admin
     last_edited_by UUID REFERENCES auth.users(id) ON DELETE SET NULL,
     created_at TIMESTAMPTZ DEFAULT NOW(),
     updated_at TIMESTAMPTZ,

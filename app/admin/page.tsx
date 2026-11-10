@@ -1,6 +1,11 @@
+import type { Metadata } from "next"
 import { AdminPage } from "@/module/admin"
 import { createClient } from "@/supabase/server"
 
+export const metadata: Metadata = {
+    title: "Administración",
+    robots: { index: false, follow: false },
+}
 
 export default async function AdminPages() {
 

@@ -15,6 +15,9 @@ export const AdminPage = () => {
     const [formError, setFormError] = useState('')
     const [formSuccess, setFormSuccess] = useState('')
     const [name, setName] = useState('')
+    const [slugEs, setSlugEs] = useState('')
+    const [slugEn, setSlugEn] = useState('')
+    const [slugJa, setSlugJa] = useState('')
     const [latex, setLatex] = useState('')
     const [description, setDescription] = useState('')
     const [wikipediaUrl, setWikipediaUrl] = useState('')
@@ -44,7 +47,7 @@ export const AdminPage = () => {
         setFormSuccess('')
 
         try {
-            const result = await createFunction({ name, latex, description, wikipediaUrl })
+            const result = await createFunction({ name, latex, description, wikipediaUrl, slugEs, slugEn, slugJa })
             if (!result.success) {
                 setFormError(result.message)
                 notify(result.message, 'error')
@@ -54,6 +57,9 @@ export const AdminPage = () => {
             setFormSuccess(`“${result.name}” se guardó como borrador.`)
             notify(`“${result.name}” se guardó como borrador.`, 'success')
             setName('')
+            setSlugEs('')
+            setSlugEn('')
+            setSlugJa('')
             setLatex('')
             setDescription('')
             setWikipediaUrl('')
@@ -102,6 +108,21 @@ export const AdminPage = () => {
                                 placeholder="Ej. Función zeta de Riemann"
                                 className="input input-bordered w-full bg-base-100"
                             />
+                        </div>
+
+                        <div className="grid gap-4 sm:grid-cols-3">
+                            <label className="form-control w-full">
+                                <span className="div-text mb-2 font-medium">Slug español <span className="text-error">*</span></span>
+                                <input required pattern="[a-z0-9]+(-[a-z0-9]+)*" maxLength={160} value={slugEs} onChange={(event) => setSlugEs(event.target.value)} placeholder="funcion-lineal" className="input input-bordered w-full bg-base-100" />
+                            </label>
+                            <label className="form-control w-full">
+                                <span className="div-text mb-2 font-medium">Slug inglés <span className="text-error">*</span></span>
+                                <input required pattern="[a-z0-9]+(-[a-z0-9]+)*" maxLength={160} value={slugEn} onChange={(event) => setSlugEn(event.target.value)} placeholder="linear-function" className="input input-bordered w-full bg-base-100" />
+                            </label>
+                            <label className="form-control w-full">
+                                <span className="div-text mb-2 font-medium">Slug japonés <span className="text-error">*</span></span>
+                                <input required pattern="[a-z0-9]+(-[a-z0-9]+)*" maxLength={160} value={slugJa} onChange={(event) => setSlugJa(event.target.value)} placeholder="ichiji-kansu" className="input input-bordered w-full bg-base-100" />
+                            </label>
                         </div>
 
                         <div className="form-control w-full">

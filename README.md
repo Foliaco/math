@@ -27,7 +27,7 @@ pnpm install
 
 ```powershell
 copy .env.example .env.local
-# Edit .env.local and set values for SUPABASE_PROJECT_URL and SUPABASE_API_KEY
+# Edit .env.local and set values for SUPABASE_PROJECT_URL, SUPABASE_API_KEY, and NEXT_PUBLIC_SITE_URL
 ```
 
 3) Run the dev server
@@ -58,6 +58,7 @@ Place these in `.env.local`
 
 - `SUPABASE_PROJECT_URL` - your Supabase project URL (e.g. https://abcxyz.supabase.co)
 - `SUPABASE_API_KEY` - your Supabase API key (use a server or service key on server-side code; do not expose it in the browser)
+- `NEXT_PUBLIC_SITE_URL` - public site origin used for canonical URLs, robots, and the sitemap (for example `https://your-domain.com`)
 - `PROJECT_REF` - optional used by `npm run types-db` to generate DB types
 
 ---
@@ -241,4 +242,3 @@ import { useToast } from '@/module/common/hook/useToast'
 const { openToast } = useToast()
 openToast('Hello world!', 'success', 3000)
 ```
-
