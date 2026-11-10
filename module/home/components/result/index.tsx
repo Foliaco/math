@@ -7,6 +7,7 @@ import remarkMath from 'remark-math';
 import { useToast } from '@/module/common/hook/useToast';
 import Link from 'next/link';
 import { MdOpenInNew } from 'react-icons/md';
+import { useLanguage } from './../../../lang/language';
 
 
 
@@ -25,7 +26,7 @@ type Props = {
 }
 
 export const Result = ({ item, index }: Props) => {
-
+    const { language } = useLanguage()
     const show = useToast()
 
     const copyToClipboard = async () => {
@@ -39,7 +40,7 @@ export const Result = ({ item, index }: Props) => {
                 <div className="flex items-start justify-between gap-4">
                     <div>
                         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-base-content/50">Entrada {String(index + 1).padStart(2, '0')}</p>
-                        <Link href={`/functions/${item.id}`} className="mt-1 hover:underline hover:text-primary  flex items-center gap-2" target="_blank">
+                        <Link href={`/functions/${language}/${language === 'es' ? item.slug_es : language === 'en' ? item.slug_en :  item.slug_ja}`} className="mt-1 hover:underline hover:text-primary  flex items-center gap-2" target="_blank">
                             <h3 className="text-xl font-semibold">{item.name}</h3>
                             <MdOpenInNew size={15} />
                         </Link>
